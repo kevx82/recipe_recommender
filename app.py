@@ -101,7 +101,7 @@ def print_favorites(recipe, top_n):
         with st.container():
             col1, col2, col3 = st.columns([1,3, 1], gap="small")
             with col1:
-                image = get_image(contry, recipe_id, name)
+                image = get_image(country, recipe_id, name)
                 st.image(image)
             with col2:
                 name = recipe['name'].unique()[0]
