@@ -1,5 +1,6 @@
 pillow
 streamlit
+psycopg2
 python-dotenv
 SQLAlchemy
 SQLAlchemy-Utils
