@@ -2,10 +2,7 @@ import re
 
 from PIL import Image
 import streamlit as st
-from streamlit_option_menu import option_menu
 
-
-from get_recipes import get_simple_name
 from recommender import RecipeRecommender
 
 size = (250, 180)
@@ -33,7 +30,11 @@ if 'chosen_recipe' not in st.session_state:
 with st.sidebar:
     st.sidebar.title("Choose ")
     st.sidebar.subheader("What ingredients you want to use?")
-
+    
+def get_simple_name(name):
+    simple_name = re.sub(r'[^A-Za-z0-9]+', r'', name)
+    simple_name = re.sub(r' ', r'_', simple_name)
+    return simple_name
 
 def show_recipe():
     with tab1:
