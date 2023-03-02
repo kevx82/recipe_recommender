@@ -1,0 +1,6 @@
+pillow
+streamlit
+python-dotenv
+SQLAlchemy
+SQLAlchemy-Utils
+scikit-learn
