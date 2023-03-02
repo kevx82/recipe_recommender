@@ -6,7 +6,7 @@ import streamlit as st
 from recommender import RecipeRecommender
 
 size = (250, 180)
-broccolove = Image.open(f'streamlit/sa_broccoli.png')
+broccolove = Image.open(f'streamlit/sad_broccoli.png')
 broccolove = broccolove.resize((390, 400), Image.ANTIALIAS)
 
 with open('streamlit/style.css') as f:
@@ -35,6 +35,16 @@ def get_simple_name(name):
     simple_name = re.sub(r'[^A-Za-z0-9]+', r'', name)
     simple_name = re.sub(r' ', r'_', simple_name)
     return simple_name
+
+def get_image(country, recipe_id, name):
+    try:
+        image = Image.open(f'data/img/{country}/{recipe_id}_{name}.jpg')
+    except:
+        image = Image.open(f'streamlit/default_menu.png')
+        
+    image = image.resize(size, Image.Resampling.LANCZOS)
+    
+    return image
 
 def show_recipe():
     with tab1:
@@ -91,8 +101,7 @@ def print_favorites(recipe, top_n):
         with st.container():
             col1, col2, col3 = st.columns([1,3, 1], gap="small")
             with col1:
-                image = Image.open(f'data/img/{country}/{recipe_id}_{name}.jpg')
-                image = image.resize(size, Image.Resampling.LANCZOS)
+                image = get_image(contry, recipe_id, name)
                 st.image(image)
             with col2:
                 name = recipe['name'].unique()[0]
