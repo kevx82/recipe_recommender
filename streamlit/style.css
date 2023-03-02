@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+
+/* main page */
+.appview-container {
+    /*background-color: #f3efd4;*/
+    background: rgb(242, 242, 242);
+}
+
+.fullScreenFrame > div {
+    display: flex;
+    justify-content: center;
+}
+
+/* sidebar */
+.css-6qob1r {
+    background-color: rgb(206, 219, 223);
+    box-shadow: 0px 2px 2px #39395f;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2f3c4a;
+    /*color: #f6c453;*/
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(71, 71, 96);
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(71, 71, 96);
+}
+
+/* recommended recipes */
+.css-ocqkz7 {
+    font-size: 24;
+    color: #39395f;
+    padding: 10px 15px 10px 10px;
+    text-align: left;
+    background-color: #d5dcdc;
+    border-radius: 5px;
+    border-color: rgb(175, 192, 197);
+    left: auto;
+}
+
+/* single recipe */
+.css-434r0z {
+    font-size: 48;
+    color: #39395f;
+    padding: 10px 15px 20px 10px;
+    text-align: left;
+    /*background-color: #dcf0ee;*/
+    background-color: #dedede;
+    border-radius: 5px;
+    border-color: #62756d;
+    left: auto;
+}
+
+/* table for ingredients 
+.css-1offfwp tr:nth-child(even) {
+        background: #d5dcd9;
+
+}*/
+
+.css-19nj2mc {
+    width: 350px;
+    position: relative;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.css-1offfwp table {
+    border-radius: 1px;
+    background: rgb(255, 255, 255);
+
+}
+
+.st-c7:active{
+    background: rgb(242 242 242);
+}
+
