@@ -36,7 +36,7 @@ def get_simple_name(name):
     simple_name = re.sub(r' ', r'_', simple_name)
     return simple_name
 
-def get_image(country, recipe_id, name):
+def get_image(country, recipe_id, name, size):
     try:
         image = Image.open(f'data/img/{country}/{recipe_id}_{name}.jpg')
     except:
@@ -60,8 +60,7 @@ def show_recipe():
         file_name = get_simple_name(recipe['name'].unique()[0])
         
         # image of recipe page
-        image = Image.open(f'data/img/{country}/{recipe_id}_{file_name}.jpg')
-        image = image.resize((700, 450), Image.Resampling.LANCZOS)
+        image = get_image(country, recipe_id, file_name, size=(700,450))
         st.image(image)
         
         # name of the recipe
@@ -101,7 +100,7 @@ def print_favorites(recipe, top_n):
         with st.container():
             col1, col2, col3 = st.columns([1,3, 1], gap="small")
             with col1:
-                image = get_image(country, recipe_id, name)
+                image = get_image(country, recipe_id, name, size=size)
                 st.image(image)
             with col2:
                 name = recipe['name'].unique()[0]
@@ -126,8 +125,7 @@ def print_recipes(recipe, top_n):
         with st.container():
             col1, col2, col3 = st.columns([1,3, 1], gap="small")
             with col1:
-                image = Image.open(f'data/img/{country}/{recipe_id}_{name}.jpg')
-                image = image.resize(size, Image.Resampling.LANCZOS)
+                image = get_image(country, recipe_id, name, size=size)
                 st.image(image)
             with col2:
                 name = recipe['name'].unique()[0]
