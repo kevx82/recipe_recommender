@@ -1,6 +1,31 @@
 # recipe_recommender
 The app recommends recipes based on the input ingredients and favourite recipes.
 
+## Recommender
+
+### Content Based Filtering
+
+The recommender uses Content Based Filtering that uses the characteristics of items to make a recommendation for a user (see figure 1).
+
+![content_based_filtering](example/content_based_filtering.png)\
+*Figure 1: Content Based Filtering*
+
+The figure 1 shows two favorite recipes of a user. A mushroom soup with parsley and noodles with meatballs in tomato sauce. Based on the ingredients the user gets a recommendation for a recipe that is a noodle soup with spring onions.
+
+### Cosine Similarity
+
+The Cosine Similarity is the metric to measure the similarity between documents or in this case recipes. A value of 0 means no similarity and a value of 1 full similarity. In the following example a 2 dimensional vector space is used.
+
+![content_based_filtering](example/cosine_similarity_1.png)\
+*Figure 2: Cosine Similarity between banana and milk*
+
+The figure 2 shows in one dimension a banana and in the other a milk. The angle between both is 90° and the resulting value for the cosine is 0. That means that the banana has no similarity with a milk. But what happens if you mix a banana and milk to a banana shake.
+
+![content_based_filtering](example/cosine_similarity_2.png)\
+*Figure 3: Cosine Similarity between banana shake and milk*
+
+Due to the fact that the banana shake is a mixure of a banana and a milk the vector is between those two ingredients/products in figure 3. Therefore the angle for the banana shake between the milk (also banana shake to banana) is 45° and the resulting value for the cosine is 0.707.
+
 ## Database
 
 The database used for this project is PostgreSQL. The following image shows the schema of the database.
