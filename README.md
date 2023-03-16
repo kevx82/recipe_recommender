@@ -10,7 +10,7 @@ The recommender uses Content Based Filtering that uses the characteristics of it
 ![content_based_filtering](example/content_based_filtering.png)\
 *Figure 1: Content Based Filtering*
 
-The figure 1 shows two favorite recipes of a user. A mushroom soup with parsley and noodles with meatballs in tomato sauce. Based on the ingredients the user gets a recommendation for a recipe that is a noodle soup with spring onions.
+The figure 1 shows two favorite recipes of a user. A mushroom soup with parsley and a noodles with meatballs in tomato sauce. Based on the ingredients of theses two favorite recipes the user gets a recommendation for a new recipe. The recommendation is a noodle soup with spring onions.
 
 ### Cosine Similarity
 
@@ -98,6 +98,27 @@ This repository is currently not providing any recipe data for the database.
 
 
 ## Application
+
+### Installing Packages
+
+The necessary packages used to run the application are in the `requirements.txt` and installed as follows:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Configuration file
+
+The information to connect to the database are stored in the `.env` file and has the following structure:
+
+```txt
+POSTGRES_USER='user'
+POSTGRES_PASSWORD='password'
+POSTGRES_HOST='127.0.0.1'
+POSTGRES_PORT='5432'
+POSTGRES_DB='database name'
+```
+
 
 ### Running the App
 
