@@ -84,3 +84,26 @@ p {
     background: rgb(242 242 242);
 }
 
+/* Override button style */
+button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+div[role="listbox"] ul {
+    background-color: rgb(175, 183, 191);
+}
+
+div[data-baseweb="select"] > div {
+    background-color: rgb(175, 183, 191);
+}
+
+header[data-testid="stHeader"] {
+    background-color: rgb(175, 183, 191);
+    box-shadow: none;
+}
+
+div[data-baseweb="popover"] {
+    background-color: rgb(175, 183, 191);
+    border: 1px solid ;
+}
